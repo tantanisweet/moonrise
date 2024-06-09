@@ -1,0 +1,65 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+#scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#moon {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: #ffdd99;
+  border-radius: 50%;
+  box-shadow: 0 0 50px #ffdd99;
+  transform: translateX(-50%);
+}
+
+
+#stars {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff;
+  animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes moonrise {
+  from {
+    bottom: -10%;
+  }
+  to {
+    bottom: 10%;
+  }
+}
+
+#moon {
+  /* ... other styles ... */
+  animation: moonrise 5s ease-in-out forwards;
+}
